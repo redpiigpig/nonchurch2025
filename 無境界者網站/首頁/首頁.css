@@ -1,0 +1,962 @@
+/* ==========================
+   重置樣式
+   ========================== */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-size: 1.2rem;
+  font-family: serif;
+  background-image: url("背景圖片.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* ==========================
+      通用樣式
+      ========================== */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+section {
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+h2 {
+  text-align: center;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin: 1em 0 -0.5em;
+  color: #444;
+}
+
+html {
+  font-size: 16px;
+}
+
+.current-issue .right p {
+  line-height: 1.8; /* 保持行距 */
+  margin-bottom: 1rem;
+  color: #444;
+  white-space: pre-line; /* 保留換行但不影響一般空格 */
+}
+
+p {
+  line-height: 1.8;
+}
+
+/* ==========================
+      頁首 (header)
+      ========================== */
+
+.header {
+  background: linear-gradient(
+    135deg,
+    rgba(76, 175, 80, 0.95),
+    rgba(129, 199, 132, 0.95)
+  );
+  height: 80px;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* 控制旅行者圖與文字之間的間距 */
+  padding: 10px 20px;
+}
+
+/* 旅行者圖片設計 */
+.logo-traveler {
+  width: 60px; /* 根據需要調整尺寸 */
+  height: 60px;
+}
+
+/* 無境界者文字圖片設計 */
+.logo-text {
+  width: 200px; /* 根據需要調整尺寸 */
+  height: 60px;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.menu a:hover {
+  color: #1b5e20;
+}
+
+/* ==========================
+      主內容區域 (main-container)
+      ========================== */
+#main-container {
+  flex: 1;
+  max-width: 75%;
+  margin: 68px auto;
+  padding: 30px 60px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.article-container {
+  display: flex;
+  flex-wrap: wrap; /* 允許格子自動換行 */
+  justify-content: space-between;
+}
+
+/* ==========================
+      第一區塊：當期雜誌
+      ========================== */
+
+.current-issue {
+  display: flex;
+  gap: 2rem;
+  background: #fff;
+  padding: 2rem;
+  margin-right: 30px;
+  margin-left: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.current-issue .left a {
+  display: inline-block;
+  position: relative;
+}
+
+.magazine-cover {
+  display: flex; /* 讓內部內容變成橫向排列 */
+  align-items: center; /* 垂直對齊 */
+  gap: 2rem; /* 設定左右間距 */
+  background: #fff; /* 保持背景 */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 左側封面圖片 */
+.magazine-cover .left {
+  flex: 0 0 40%; /* 固定左側圖片寬度 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 右側文字內容 */
+.magazine-cover .right {
+  flex: 1; /* 讓右側自動填滿剩餘空間 */
+  text-align: left;
+}
+
+.current-issue img {
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.current-issue img:hover {
+  transform: scale(1.05);
+}
+
+.cover-description {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: #666;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* 當期文章右側文字區塊 */
+.current-issue .right h2 {
+  margin-bottom: 1rem; /* 標題與下一行的間距 */
+  display: flex; /* 讓內容在同一行 */
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.current-issue .right .title {
+  font-size: 1.5rem; /* 主標題大小 */
+  font-weight: bold;
+  color: #333 !important; /* 主標題顏色 */
+}
+
+/* 當期文章右側標題超連結樣式 */
+.current-issue .right .title-link {
+  color: #007bff !important;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+/* 滑鼠懸浮時的超連結效果 */
+.current-issue .right .title-link:hover {
+  color: #0056b3 !important;
+  text-decoration: underline;
+}
+
+.current-issue .right .date {
+  font-size: 1.2rem;
+  color: #ff8000 !important;
+  font-weight: normal;
+  font-weight: bold;
+}
+
+/* 滑鼠懸浮時的提示方框 */
+.current-issue .right .title-link::after {
+  content: "閱讀本期雜誌"; /* 提示文字 */
+  position: absolute;
+  bottom: -2.5rem; /* 方框位置：位於文字下方 */
+  left: 50%; /* 水平居中 */
+  transform: translateX(-50%);
+  background-color: rgba(100, 100, 100, 0.9); /* 灰底色 */
+  color: #fff; /* 白色文字 */
+  padding: 0.5rem 1rem; /* 方框內邊距 */
+  border-radius: 4px; /* 圓角邊框 */
+  font-size: 0.9rem;
+  white-space: nowrap; /* 避免換行 */
+  opacity: 0; /* 初始隱藏 */
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* 平滑淡入效果 */
+  pointer-events: none; /* 避免影響滑鼠點擊 */
+}
+
+/* 滑鼠懸浮時顯示方框 */
+.current-issue .right .title-link:hover::after {
+  opacity: 1; /* 顯示方框 */
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px); /* 微微向上浮動 */
+}
+
+/* 封面故事連結樣式 */
+.cover-story {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.cover-story a {
+  color: #8b4513;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.cover-story a:hover {
+  color: #d2691e;
+  text-decoration: underline;
+}
+
+.cover-story a::after {
+  content: "閱讀本文";
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(100, 100, 100, 0.9);
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.cover-story a:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* ==========================
+      第二區塊：主題文章
+   ========================== */
+.article-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr)); /* 三欄排列 */
+  column-gap: 2rem; /* 左右間距 2rem */
+  row-gap: 3rem; /* 上下排間距 4rem */
+  margin: 2rem auto;
+  align-items: stretch; /* 讓每一行的格子高度統一，以最高的為準 */
+  max-width: 100%;
+}
+
+/* 將整個格子可點擊的超連結樣式 */
+.article-link {
+  display: block; /* 讓 <a> 填滿整個格子 */
+  text-decoration: none; /* 移除超連結預設底線 */
+  color: inherit; /* 保持文字顏色一致 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 每篇文章格子樣式 */
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #f9f9f9;
+  padding: 1.5rem; /* 內邊距 1.5rem */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  min-height: 25rem;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 滑鼠懸浮效果 */
+.article-link:hover .article {
+  transform: translateY(-5px); /* 向上浮動 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 加強陰影 */
+}
+
+/* 提示文字 */
+.article::after {
+  content: "閱讀本文";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* 不影響滑鼠點擊 */
+}
+
+.article-link:hover .article::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(-5px); /* 輕微上移 */
+}
+
+/* 左上角標籤樣式 */
+.article-type {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 顏色分類 */
+.article-type.red {
+  background-color: #8b0000;
+} /* 深紅 */
+.article-type.orange {
+  background-color: #ff8000;
+} /* 深橙 */
+.article-type.yellow {
+  background-color: #b8860b;
+} /* 深黃 */
+.article-type.green {
+  background-color: #2e8b57;
+} /* 深綠 */
+.article-type.blue {
+  background-color: #4682b4;
+} /* 深藍 */
+.article-type.indigo {
+  background-color: #27408b;
+} /* 靛藍 */
+.article-type.purple {
+  background-color: #6a5acd;
+} /* 深紫 */
+.article-type.pink {
+  background-color: #db7093;
+} /* 粉紅 */
+
+/* 標題樣式 */
+
+.article h3 {
+  margin-bottom: 0.5rem;
+
+  color: #007bff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.article-link:hover h3 {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.article h4 {
+  display: inline-block;
+  color: #007bff !important;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  word-wrap: normal;
+}
+
+.article:hover h4 {
+  color: #0056b3 !important;
+  text-decoration: underline;
+}
+
+/* 作者樣式 */
+.b {
+  color: #444;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* 文章簡介 */
+.article p {
+  margin: 0.5;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  flex-grow: 1;
+  white-space: normal;
+}
+
+/* ==========================
+      第三區塊：多元講堂
+   ========================== */
+.diverse-lectures {
+  background: #ffffff; /* 強制為整個區塊添加背景 */
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加區塊陰影 */
+}
+
+/* ==========================
+      第四區塊：本期作者
+   ========================== */
+.authors {
+  padding: 3rem;
+}
+
+.author-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 每列五位作者 */
+  gap: 2rem; /* 間隔保留 */
+  justify-content: center;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 水平居中圖片 */
+  transition: transform 0.3s ease;
+}
+
+.author img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.author a:hover img {
+  transform: translateY(-5px);
+}
+
+.author h4 {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: #333;
+  text-align: center; /* 讓名字置中 */
+}
+
+/* Tooltip 樣式 */
+.author a {
+  position: relative; /* 父容器定位，讓 Tooltip 依附於此 */
+  text-decoration: none;
+}
+
+.author a::after {
+  content: attr(data-tooltip); /* 顯示 data-tooltip 屬性內容 */
+  position: absolute;
+  bottom: -2.5rem; /* 距離圖片下方 */
+  left: 50%; /* 水平居中 */
+  transform: translateX(-50%);
+  white-space: nowrap; /* 內容不換行 */
+  background: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+  color: #fff; /* 文字顏色 */
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  opacity: 0; /* 初始隱藏 */
+  visibility: hidden; /* 初始不可見 */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* 避免影響鼠標點擊 */
+}
+
+.author a:hover::after {
+  opacity: 1; /* 顯示 Tooltip */
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px); /* 提示框向上微移 5px */
+}
+
+/* ==========================
+      第五區塊：下期預告和徵稿公告
+   ========================== */
+.next-preview-submission {
+  display: flex;
+  justify-content: center; /* 讓兩個區塊水平排列並置中 */
+  gap: 4rem; /* 設定兩者之間的間距 */
+  flex-wrap: wrap; /* 避免小螢幕時超出畫面 */
+}
+
+.call-for-submission {
+  flex: 1; /* 讓兩個區塊平均分配空間 */
+  max-width: auto; /* 限制最大寬度，防止過大 */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: left;
+}
+
+.call-for-submission h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.call-for-submission p {
+  font-size: 1rem;
+  color: #555;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.call-for-submission .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  width: 50%;
+  max-width: 100px;
+  margin: 1rem auto 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.call-for-submission .btn:hover {
+  background-color: #45a049;
+  transform: translateY(-3px);
+}
+
+.call-for-submission p strong {
+  color: #007bff; /* 設定為藍色 */
+  font-weight: bold; /* 設定為粗體 */
+}
+
+.call-for-submission p .issue-date {
+  color: #ff8000; /* 設定為橘色 */
+  font-weight: bold; /* 設定為粗體 */
+}
+
+/* ==========================
+      第六區塊：搜尋
+   ========================== */
+.search {
+  text-align: center; /* 讓整個區塊內容置中 */
+}
+
+.search h2 {
+  margin-bottom: 1rem;
+}
+
+/*搜尋功能提示小區塊*/
+.search-info-box {
+  margin-top: 1rem; /* 與搜尋框之間的間距 */
+  padding: 1rem;
+  background-color: rgba(255, 165, 0, 0.2); /* 淡橘色背景 */
+  border: 1px solid rgba(255, 165, 0, 0.5); /* 淡橘色邊框 */
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  font-weight: bold;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 五個藍色超連結樣式 */
+.search-links {
+  margin-bottom: 1.5rem;
+}
+
+.keyword-link {
+  display: inline-block;
+  margin: 0 0.5rem;
+  font-size: 1.1rem;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.keyword-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* 下拉選單與輸入框樣式 */
+.search-box {
+  display: inline-flex; /* 讓元素水平排列 */
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem; /* 間距 */
+}
+
+/* 下拉選單樣式 */
+.search-select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* 輸入框樣式 */
+.search-input {
+  width: 300px; /* 固定寬度 */
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* 搜尋按鈕樣式 */
+.btn {
+  padding: 0.5rem 1rem;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #218838;
+}
+
+/* ==========================
+      第七區塊：聯繫我們
+   ========================== */
+.contact {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.contact a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* ==========================
+ 頁尾樣式 (Footer)
+========================== */
+footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==========================
+   RWD 設計
+========================== */
+
+@media (max-width: 1400px) {
+  #main-container {
+    max-width: 85%;
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .current-issue {
+    max-width: 95%;
+    margin: 0 auto; /* 置中 */
+  }
+
+  .diverse-lectures .article-container {
+    width: 95% !important; /* 強制寬度限制 */
+    max-width: 95% !important;
+    margin: 0 auto !important; /* 水平置中 */
+  }
+}
+
+/* 平板 (<=1024px) */
+@media (max-width: 1024px) {
+  #main-container {
+    max-width: 90%;
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .theme-image img,
+  .image-content img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .menu {
+    gap: 10px;
+  }
+
+  .article-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .authors .author-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 850px) {
+  .current-issue {
+    display: grid;
+    grid-template-areas:
+      "title"
+      "cover"
+      "desc"
+      "link"; /* 新增連結區塊 */
+  }
+
+  .current-issue .right h3 {
+    grid-area: title;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .current-issue .left {
+    grid-area: cover;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .current-issue .left img.magazine-cover {
+    width: 260px;
+    margin-top: 1rem !important;
+  }
+
+  .current-issue .right p {
+    grid-area: desc;
+    text-align: left;
+  }
+
+  /* 將「封面故事」連結放在最下面 */
+  .current-issue .right a {
+    grid-area: link;
+    display: block;
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+}
+
+/* 手機 (<=768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .header {
+    height: auto;
+    padding: 10px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* 導覽選單可橫向滑動 */
+  .menu {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    margin-top: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .menu a {
+    flex: 0 0 auto;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+
+  #main-container {
+    max-width: 100%;
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .text-with-image {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .theme-image img,
+  .image-content img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .quote-box {
+    margin: 1rem 0;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  /* 文章導航改為直式 column */
+  .article-navigation {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-item strong,
+  .nav-item a {
+    text-align: center;
+    display: block;
+  }
+
+    /* footer 文字完全置中，允許換行 */
+  footer {
+    text-align: center;
+    padding: 10px;
+    line-height: 1.4;
+    white-space: normal;
+  }
+  .footer-note{
+    padding-right: 30px;
+  }
+
+  .article-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* 特稿專區：手機直式改為 column */
+  .diverse-lectures .article-container {
+    display: flex !important; /* 覆蓋 inline grid */
+    flex-direction: column;
+    gap: 1.5rem; /* 每篇文章的間距 */
+  }
+
+  .authors .author-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-box {
+    flex-direction: column;
+    align-items: stretch; /* 每個元素都佔滿寬度 */
+  }
+
+  .search-box .search-select,
+  .search-box .search-input,
+  .search-box .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .search-box .btn {
+    margin-bottom: 0; /* 按鈕最後一個不留空隙 */
+  }
+}

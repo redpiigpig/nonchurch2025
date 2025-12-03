@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit|Facebot) [NC]
+    RewriteRule .* - [L]
+</IfModule>
