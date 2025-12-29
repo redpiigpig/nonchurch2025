@@ -247,9 +247,9 @@ section {
 .type-block.purple {
   background-color: #6a5acd;
 } /* 深紫 */
-.type-block.grass {
-  background-color: #03773f;
-} /* 草綠 */
+.type-block.soil {
+  background-color: #7d6c29;
+} /* 土黃 */
 .type-block.pink {
   background-color: #db7093;
 } /* 粉紅 */
@@ -468,14 +468,14 @@ footer {
     display: block;
   }
 
-    /* footer 文字完全置中，允許換行 */
+  /* footer 文字完全置中，允許換行 */
   footer {
     text-align: center;
     padding: 10px;
     line-height: 1.4;
     white-space: normal;
   }
-  .footer-note{
+  .footer-note {
     padding-right: 30px;
   }
 

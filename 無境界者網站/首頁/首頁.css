@@ -481,7 +481,7 @@ p {
    ========================== */
 .diverse-lectures {
   background: #ffffff; /* 強制為整個區塊添加背景 */
-  padding: 2rem;
+  padding: 2rem 2rem 3.5rem 2rem;
   margin: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加區塊陰影 */
@@ -918,14 +918,14 @@ footer {
     display: block;
   }
 
-    /* footer 文字完全置中，允許換行 */
+  /* footer 文字完全置中，允許換行 */
   footer {
     text-align: center;
     padding: 10px;
     line-height: 1.4;
     white-space: normal;
   }
-  .footer-note{
+  .footer-note {
     padding-right: 30px;
   }
 
