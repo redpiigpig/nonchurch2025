@@ -1,0 +1,362 @@
+/* ==========================
+   重置樣式
+   ========================== */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #444;
+}
+
+body {
+  font-size: 1.2rem;
+  font-family: serif;
+  background-image: url("../../首頁/背景圖片.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* ==========================
+            通用樣式
+            ========================== */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+section {
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin: 1em 0 -1em;
+  text-indent: 1em;
+  font-family: "DFKai-SB", "標楷體", serif;
+  font-family: "Times New Roman", serif;
+}
+
+p {
+  line-height: 1.8;
+  margin: 0.5rem;
+  text-align: justify;
+  font-family: serif;
+  white-space: pre-line;
+}
+
+/* 頁頭區塊：背景圖片與內容置中 */
+.header {
+  background: linear-gradient(
+    135deg,
+    rgba(76, 175, 80, 0.95),
+    rgba(129, 199, 132, 0.95)
+  );
+  height: 80px;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* 控制旅行者圖與文字之間的間距 */
+  padding: 10px 20px;
+}
+
+/* 旅行者圖片設計 */
+.logo-traveler {
+  width: 60px; /* 根據需要調整尺寸 */
+  height: 60px;
+}
+
+/* 無境界者文字圖片設計 */
+.logo-text {
+  width: 200px; /* 根據需要調整尺寸 */
+  height: 60px;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.menu a:hover {
+  color: #1b5e20;
+}
+
+/* 主內容區塊 */
+.main-container {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  max-width: 75%;
+  margin: 50px auto;
+  padding: 30px 60px;
+  box-sizing: border-box;
+}
+
+/* 作者區塊 */
+.author-container {
+  display: flex;
+  justify-content: center; /* 左右居中 */
+  align-items: flex-start;
+  gap: 40px; /* 控制左右區塊距離 */
+}
+
+.author-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.author-left h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.author-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 自介部分 */
+.author-bio {
+  flex: 1;
+  color: #555;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  line-height: 1.8;
+}
+
+/* 分隔線 */
+.divider {
+  border: none;
+  border-top: 2px solid #ccc;
+  margin: 20px 0;
+}
+
+/* 文章列表 */
+.article-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.article-list li {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.article-list .issue::before {
+  content: "‧";
+  color: #333;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.article-list .issue {
+  font-weight: bold;
+  color: #333;
+}
+
+/* 文章標題與頁數樣式 */
+.article-title {
+  font-weight: bold;
+  color: #333;
+  margin-left: 3px;
+  margin-right: 3px; /* 確保前後空格一致 */
+}
+
+/* 文章標題超連結樣式 */
+.article-title a {
+  color: #1e90ff; /* 藍色字體 */
+  font-weight: bold; /* 粗體 */
+  text-decoration: none; /* 移除底線 */
+  margin-left: 5px;
+  margin-right: 5px; /* 保證標題前後間距一致 */
+  white-space: normal; /* 允許自動換行 */
+  overflow-wrap: break-word; /* 長字超出寬度自動換行 */
+  word-break: break-all;
+}
+
+.article-title a:hover {
+  color: #4caf50; /* 滑鼠懸停變綠色 */
+  text-decoration: underline; /* 加底線 */
+}
+
+/* 文章簡介：首行縮排兩個字 */
+.article-summary {
+  margin-top: -1rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  color: #444;
+  font-size: 1.2rem;
+  text-indent: 2em; /* 首行縮排兩個字 */
+}
+
+/* 頁尾區塊 */
+footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+/* ==========================
+   RWD 設計
+========================== */
+
+/* 螢幕寬度 <=1400px */
+@media (max-width: 1400px) {
+  .main-container {
+    max-width: 85%;
+    padding: 20px;
+    margin: 30px auto;
+  }
+}
+
+/* 平板 (<=1024px) */
+@media (max-width: 1024px) {
+  #main-container {
+    max-width: 90%;
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .theme-image img,
+  .image-content img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .menu {
+    gap: 10px;
+  }
+}
+
+/* 手機 (<=768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .header {
+    height: auto;
+    padding: 10px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* 導覽選單可橫向滑動 */
+  .menu {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    margin-top: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .menu a {
+    flex: 0 0 auto;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+
+  .main-container {
+    max-width: 95%;
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  footer {
+    text-align: center;
+    padding: 10px;
+    line-height: 1.4;
+    white-space: normal;
+  }
+
+  .author-container {
+    flex-direction: column; /* 改成直式 */
+    align-items: center; /* 水平置中 */
+    text-align: center; /* 姓名置中 */
+    gap: 0rem; /* 上下間距 */
+  }
+
+  .author-left {
+    margin-bottom: 1rem; /* 與簡介區塊保持距離 */
+  }
+
+  .author-bio {
+    text-align: left; /* 文字左對齊，閱讀更自然 */
+    width: 100%; /* 讓簡介填滿可用寬度 */
+  }
+
+  .author-photo {
+    width: 230px; /* 放大圖片 (原本可能是 120px 或 150px) */
+    height: 230px;
+    border-radius: 50%; /* 保持圓形 */
+  }
+}
